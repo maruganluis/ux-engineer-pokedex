@@ -4,10 +4,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 100%;
 }
 
 /* RESETS */
 
+/* FUENTE */
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* FUENTE */
 
 /* ROOT */
 
@@ -51,7 +69,7 @@
     /* Headline */
     --pk-headline-size: 24px;
     --pk-headline-line-height: 32px;
-    --pl-headline-weight: 700;
+    --pk-headline-weight: 700;
 
     /* Subtitle 1 */
     --pk-subtitle1-size: 14px;
@@ -71,22 +89,22 @@
     /* Body 1 */
     --pk-body1-size: 14px;
     --pk-body1-line-height: 16px;
-    --pl-body1-weight: 400;
+    --pk-body1-weight: 400;
 
     /* Body 2 */
     --pk-body2-size: 12px;
     --pk-body2-line-height: 16px;
-    --pl-body2-weight: 400;
+    --pk-body2-weight: 400;
 
     /* Body 3 */
     --pk-body3-size: 10px;
     --pk-body3-line-height: 16px;
-    --pl-body3-weight: 400;
+    --pk-body3-weight: 400;
 
     /* Caption */
-    --pk-body2-size: 8px;
-    --pk-body2-line-height: 23px;
-    --pl-body2-weight: 400;
+    --pk-caption-size: 8px;
+    --pk-caption-line-height: 23px;
+    --pk-caption-weight: 400;
 
     /* === Elevation === */
     --pk-elevation-md: 0px 3px 12px 3px rgba(0, 0, 0, 0.20);
@@ -119,3 +137,72 @@
 }
 
 /* ROOT */
+
+/* ESTILOS */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.headline {
+    font-size: var(--pk-headline-size);
+    line-height: var(--pk-headline-line-height);
+    font-weight: var(--pk-headline-weight);
+}
+
+  .subtitle1 {
+    font-size: var(--pk-subtitle1-size);
+    line-height: var(--pk-subtitle1-line-height);
+    font-weight: var(--pk-subtitle1-weight);
+}
+
+.subtitle2 {
+    font-size: var(--pk-subtitle2-size);
+    line-height: var(--pk-subtitle2-line-height);
+    font-weight: var(--pk-subtitle2-weight);
+}
+
+.subtitle3 {
+    font-size: var(--pk-subtitle3-size);
+    line-height: var(--pk-subtitle3-line-height);
+    font-weight: var(--pk-subtitle3-weight);
+}
+
+.body1 {
+    font-size: var(--pk-body1-size);
+    line-height: var(--pk-body1-line-height);
+    font-weight: var(--pk-body1-weight);
+}
+
+.body2 {
+    font-size: var(--pk-body2-size);
+    line-height: var(--pk-body2-line-height);
+    font-weight: var(--pk-body2-weight);
+}
+
+.body3 {
+    font-size: var(--pk-body3-size);
+    line-height: var(--pk-body3-line-height);
+    font-weight: var(--pk-body3-weight);
+}
+
+.caption {
+    font-size: var(--pk-caption-size);
+    line-height: var(--pk-caption-line-height);
+    font-weight: var(--pk-caption-weight);
+}
+
+
+/* ESTILOS */
+
+
+.pokedex__container {
+    background-color: var(--pk-color-primary);
+    width: 360px;
+    height: 640px;
+    border-radius: var(--pk-rounded-sm);
+    padding: var(--pk-spacing-xxs);
+}
