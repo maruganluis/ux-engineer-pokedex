@@ -143,9 +143,12 @@ body {
     background-color: var(--pk-color-white);
     border-radius: var(--pk-rounded-md);
     height: 520px;
-    width: 352px;
+    width: 356px;
     padding: var(--pk-spacing-lg) var(--pk-spacing-sm) 0px var(--pk-spacing-sm);
     box-shadow: var(--pk-depression-md);
+    overflow-y: auto;
+    scrollbar-width:thin; 
+    scrollbar-color: var(--pk-color-white) var(--pk-color-primary);
 }
 
 /* POKEMON LIST */
@@ -153,7 +156,7 @@ body {
 /* POKEMON CARD */
 
 .pokemon__card {
-    width: 104px;
+    width: 98px;
     height: 108px;
     border-radius: var(--pk-rounded-md);
     background-color: var(--pk-color-white);
@@ -201,6 +204,7 @@ body {
     gap: var(--pk-spacing-xs) var(--pk-spacing-xs);
     align-items: flex-start;
     align-self: stretch;
+    height: auto;
 }
 
 /* POKEMON CARD */
