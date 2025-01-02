@@ -30,43 +30,49 @@ function renderPokemon(pokemonApi) {
 
 }
 
-for(let i=0; i<pokemonApi.length; i++){
-    renderPokemon(pokemonApi[i]);
+for (const pokemon of pokemonApi) {
+    renderPokemon(pokemon);
 }
 
 
 // Escuchar el evento del buscar y filtrar los pokemons por nombre //
 
-// Uso el querySelector para buscar el input con la clase concreta de CSS y guardo el buscador en la variable para utilizarlo más tarde //
+function filterPokemonList() {
+        
+        // Uso el querySelector para buscar el input con la clase concreta de CSS y guardo el buscador en la variable para utilizarlo más tarde //
+
+    const searchBar = document.querySelector(`.pokedex__searchbar`);
+
+    // Evento que "escucha" al input search cuando interactuo con él //
+
+    searchBar.addEventListener(`input`, function () {
+
+        // Guardo el pokemon que se busca en el input //
+
+        const result = searchBar.value; 
+
+        // filter recorre la lista de datos de mi pokemonApi y trata de encontrar los relacionados con el "result" que es lo que he escrito en la searchbar //
+
+        const filteredPokemons = pokemonApi.filter(function(pokemon) {
+            return pokemon.name.includes(result);
+        }
+        );
+
+
+        // Arrojo la información al contenedor vacio, sino me estaba replicando el html existente + los resultados de la busqueda //
+
+        const pokemonList = document.querySelector('.pokemon__container-list');
+        pokemonList.innerHTML = '';
+        
+
+        // Recorro los pokemon con nombre relacionado con la busqueda y los renderizo (muestro) //
+
+        filteredPokemons.forEach(function(pokemon) {
+            renderPokemon(pokemon);
+        }
+        );
+    });
+}
 
 const searchBar = document.querySelector(`.pokedex__searchbar`);
-
-// Evento que "escucha" al input search cuando interactuo con él //
-
-searchBar.addEventListener(`input`, function () {
-
-    // Guardo el pokemon que se busca en el input //
-
-    const result = searchBar.value; 
-
-    // filter recorre la lista de datos de mi pokemonApi y trata de encontrar los relacionados con el "result" que es lo que he escrito en la searchbar //
-
-    const filteredPokemons = pokemonApi.filter(function(pokemon) {
-        return pokemon.name.includes(result);
-    }
-    );
-
-
-    // Arrojo la información al contenedor vacio, sino me estaba replicando el html existente + los resultados de la busqueda //
-
-    const pokemonList = document.querySelector('.pokemon__container-list');
-    pokemonList.innerHTML = '';
-    
-
-    // Recorro los pokemon con nombre relacionado con la busqueda y los renderizo (muestro) //
-
-    filteredPokemons.forEach(function(pokemon) {
-        renderPokemon(pokemon);
-    }
-    );
-});
+searchBar.addEventListener(`input`, filterPokemonList);
