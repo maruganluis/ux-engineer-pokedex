@@ -4,7 +4,8 @@ function renderPokemon(pokemonApi) {
 
     // Creación de la card mediante JS //
 
-    const pokemonCard = document.createElement(`article`);
+    const pokemonCard = document.createElement(`a`);
+    pokemonCard.href = `./detail.html?id=${pokemonApi.id}`;
     pokemonCard.classList.add(`pokemon__card`);
     pokemonCard.innerHTML = `
         <header class="pokemon__card-info">
